@@ -15,11 +15,13 @@ if (LIFE_SETTINGS(getNumber,"spyGlass_toggle") isEqualTo 1) then {[] execVM "Spy
 
 enableRadio false;
 enableSentences false;
-enableEnvironment [true, true];
+enableEnvironment [false, false];
 disableRemoteSensors true;
 enableCamShake false;
 
-// Bright Night
+[] execVM "core\init.sqf";
+[] execVM "briefing.sqf";
+
 [] spawn {
     _adjustLight = {
         CHBN_adjustBrightness = CHBN_adjustBrightness max 0 min 1;
@@ -47,16 +49,12 @@ enableCamShake false;
         waitUntil {!(_adjustBrightness isEqualTo CHBN_adjustBrightness) || !(_adjustColor isEqualTo CHBN_adjustColor)};
         call _adjustLight;
     };
-};
 
-// Foggy Woggy Poggy
-for "_i" from 0 to 1 step 0 do {
-    if ( fog > 0.05 || { rain >= 0.05 } ) then {
-        0 setFog 0;
-        0 setRain 0;
+    for "_i" from 0 to 1 step 0 do {
+        if ( fog > 0.05 || { rain >= 0.05 } ) then {
+            0 setFog 0;
+            0 setRain 0;
+        };
+        sleep 300;
     };
-    sleep 300;
 };
-
-[] execVM "core\init.sqf";
-[] execVM "briefing.sqf";
