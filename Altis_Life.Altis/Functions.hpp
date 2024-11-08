@@ -372,3 +372,11 @@ class Life_Client_Core {
         class vInteractionMenu {};
     };
 };
+
+class ALRH {
+    tag = "ALRH";
+    class ALRHFunctions {
+        file = "Functions\Welcome";
+        class welcomeNotification{};
+    };
+};
