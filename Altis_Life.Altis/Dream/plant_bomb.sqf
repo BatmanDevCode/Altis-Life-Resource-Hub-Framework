@@ -19,7 +19,7 @@ if (_vehicle != _player) then {
         _vehicle setVariable ["bombPlanted", true];
         _vehicle setVariable ["bombPlantedBy", _player];
 
-        _player addAction ["Detonate Bomb", "scripts\detonate_bomb.sqf", [_vehicle, _player], 5, false, true, "", "(_this select 1) == _player"];
+        _player addAction ["Detonate Bomb", "Dream\detonate_bomb.sqf", [_vehicle, _player], 5, false, true, "", "(_this select 1) == _player"];
 
         _player removeWeapon "hgun_pistol_heavy_01_F";
 

@@ -28,7 +28,7 @@ while {true} do {
 
                 if (_x getVariable ["bombPlanted", false]) then {
                     if (isNil {_x getVariable "hasDetonateAction"}) then {
-                        _x addAction ["Detonate Bomb", "scripts\detonate_bomb.sqf", nil, 5, false, true, "", ""];
+                        _x addAction ["Detonate Bomb", "Dream\detonate_bomb.sqf", nil, 5, false, true, "", ""];
                         _x setVariable ["hasDetonateAction", true];
                     };
                 } else {
